@@ -1,50 +1,55 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "../ui/Button";
-import { NavLink } from "../ui/NavLink";
+import Logo from "../ui/Logo";
 
 const navLinks = [
-  { label: "Explore", href: "#" },
-  { label: "For Operators", href: "#" },
-  { label: "How it works", href: "#" },
-  { label: "About the PCC", href: "#" },
+  { label: "Home", href: "/home" },
+  { label: "Create Farm", href: "/createFarm" },
+  { label: "Chat", href: "/chat" },
+  { label: "Farm View", href: "/farmView" },
 ];
 
 export const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2 group cursor-pointer">
-          <div className="flex items-center text-secondary dark:text-primary">
-            <span className="material-symbols-outlined text-3xl">eco</span>
-            <span className="material-symbols-outlined text-2xl -ml-2">
-              flutter_dash
-            </span>
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-            CafIA
-          </h1>
-        </div>
+        <Link to="/" className="flex items-center gap-2 group cursor-pointer flex-shrink-0">
+          <Logo />
+        </Link>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop links - hidden on mobile */}
+        <div className="hidden md:flex items-center gap-4 lg:gap-8 flex-1 justify-center">
           {navLinks.map((link) => (
-            <NavLink key={link.label} href={link.href}>
+            <Link
+              key={link.label}
+              to={link.href}
+              className="text-xs lg:text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap"
+            >
               {link.label}
-            </NavLink>
+            </Link>
           ))}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-4">
-          <Button variant="ghost" size="sm" icon="language">
+        {/* Actions - responsive buttons */}
+        <div className="flex items-center gap-2 md:gap-3 lg:gap-4">
+          <Button variant="ghost" size="sm" icon="language" className="hidden sm:flex">
             EN
           </Button>
-          <Button variant="accent" size="md">
-            Register your farm
-          </Button>
-          <Button variant="outline" size="md">
-            Enter
+          <Link to="/createFarm" className="hidden md:block">
+            <Button variant="accent" size="md">
+              Register your farm
+            </Button>
+          </Link>
+          <Link to="/home" className="hidden md:block">
+            <Button variant="outline" size="md">
+              Enter
+            </Button>
+          </Link>
+          {/* Mobile menu toggle placeholder */}
+          <Button variant="outline" size="sm" icon="menu" className="md:hidden">
+            Menu
           </Button>
         </div>
       </div>

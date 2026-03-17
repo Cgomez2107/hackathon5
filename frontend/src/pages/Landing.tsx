@@ -87,7 +87,6 @@ const stats = [
   { value: "100%", label: "Authentic" },
 ];
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
 
 const Landing = () => {
   return (
@@ -138,7 +137,7 @@ const Landing = () => {
       {/* ── How It Works ── */}
       <section className="pt-32 pb-20 px-6 leaf-pattern dark:bg-background-dark">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle title="How CafIA Works" />
+          <SectionTitle title="How Cumanday Works" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((f) => (
               <FeatureCard key={f.title} {...f} />
@@ -180,7 +179,7 @@ const Landing = () => {
             />
             <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed -mt-10">
               The Coffee Cultural Landscape of Colombia (PCC) is more than just
-              a place—it's a living heritage. With CafIA, navigate through 47
+              a place—it's a living heritage. With Cumanday, navigate through 47
               municipalities and thousands of independent farms using our
               interactive map.
             </p>

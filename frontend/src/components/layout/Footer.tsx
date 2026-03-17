@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
         <div className="col-span-1">
           <div className="flex items-center gap-2 mb-6 text-white">
             <span className="material-symbols-outlined text-3xl">eco</span>
-            <h2 className="text-2xl font-bold">CafIA</h2>
+            <h2 className="text-2xl font-bold">Cumanday</h2>
           </div>
           <p className="text-sm leading-relaxed mb-6">
             Empowering the coffee heritage of Colombia through technology and
@@ -98,7 +98,7 @@ export const Footer: React.FC = () => {
       {/* Bottom bar */}
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] uppercase font-bold tracking-widest">
         <p>
-          © 2024 CafIA. Supporting the Coffee Cultural Landscape of Colombia.
+          © 2024 Cumanday. Supporting the Coffee Cultural Landscape of Colombia.
         </p>
         <div className="flex gap-8">
           {["Privacy Policy", "Terms of Service", "Cookies"].map((label) => (
